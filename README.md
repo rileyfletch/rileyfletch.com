@@ -1,1 +1,1 @@
-testing out mdx template for blog site
+Testing out MDX blog site 
