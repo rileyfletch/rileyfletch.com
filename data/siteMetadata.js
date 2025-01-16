@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Riley Fletcher',
   author: 'Riley Fletcher',
   headerTitle: 'Riley Fletcher',
-  description: 'Personal portfolio and blog.',
+  description: 'Writing about software development, the tech industry, and lifestyle.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://rileyfletch.com',
