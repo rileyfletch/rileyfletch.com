@@ -42,7 +42,7 @@ export default function Home() {
                     <div className="avatar mb-6">
                         <div className="w-24 rounded-full bg-primary/20 flex items-center justify-center">
                             <Image 
-                            src="processor.svg"
+                            src="shield.svg"
                             className="max-w-sm rounded-lg shadow-2xl"
                             alt="blank"
                             width={25}
@@ -53,7 +53,7 @@ export default function Home() {
                     <h1 className="text-2xl font-bold text-base-content mb-2">Riley Fletcher</h1>
                     <h2 className="text-lg font-medium text-primary mb-3">Software Engineer</h2>
                     <p className="text-base-content/70 leading-relaxed">
-                        Just a chill guy curious about low-level computer stuff.
+                        Just a chill guy curious about low-level computer stuff
                     </p>
                 </div>
                 

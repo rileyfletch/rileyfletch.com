@@ -1,4 +1,1 @@
-## Portfolio & Blog
-- Next.js
-- Tailwind + DaisyUI
-- MDX
+## third iteration of my website & blog
