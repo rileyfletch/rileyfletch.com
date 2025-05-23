@@ -1,4 +1,7 @@
 import Image from "next/image";
+import About from "@/components/about";
+import Experience from "@/components/experience";
+import Projects from "@/components/projects";
 
 export default function Home() {
     return (
@@ -19,35 +22,13 @@ export default function Home() {
             
             <main className="flex-1 p-8 bg-base-200 min-h-screen">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-8">Your Main Content Goes Here</h1>
+
                     <div className="space-y-8">
-                        <div className="card bg-base-100 shadow-xl">
-                            <div className="card-body">
-                                <h2 className="card-title">About Section</h2>
-                                <p>This is where your about content would go. The left sidebar is sticky and will remain visible as you scroll through this content.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="card bg-base-100 shadow-xl">
-                            <div className="card-body">
-                                <h2 className="card-title">Experience Section</h2>
-                                <p>Your experience content here. Add as much content as you need - the sidebar will stay in place.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="card bg-base-100 shadow-xl">
-                            <div className="card-body">
-                                <h2 className="card-title">Projects Section</h2>
-                                <p>Your projects content here. The layout is responsive and will adapt to different screen sizes.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="h-96 bg-base-100 rounded-lg shadow-xl flex items-center justify-center">
-                            <p className="text-lg text-base-content/70">More content to demonstrate sticky behavior</p>
-                        </div>
-                        <div className="h-96 bg-base-100 rounded-lg shadow-xl flex items-center justify-center">
-                            <p className="text-lg text-base-content/70">Even more content...</p>
-                        </div>
+
+                        <About></About>
+                        <Experience></Experience>
+                        <Projects></Projects>
+                       
                     </div>
                 </div>
             </main>
@@ -64,15 +45,15 @@ export default function Home() {
                             src="processor.svg"
                             className="max-w-sm rounded-lg shadow-2xl"
                             alt="blank"
-                            width={125}
-                            height={125}>
+                            width={25}
+                            height={25}>
                             </Image>
                         </div>
                     </div>
                     <h1 className="text-2xl font-bold text-base-content mb-2">Riley Fletcher</h1>
                     <h2 className="text-lg font-medium text-primary mb-3">Software Engineer</h2>
                     <p className="text-base-content/70 leading-relaxed">
-                        Curious about Linux, security, networks, cloud infrastructure, and embedded systems.
+                        Just a chill guy curious about low-level computer stuff.
                     </p>
                 </div>
                 
@@ -81,8 +62,8 @@ export default function Home() {
                         <li>
                             <a href="#about" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 8C13.7 8 15 9.3 15 11V22H13V16H11V22H9V11C9 9.3 10.3 8 12 8Z"/>
-</svg>
+                                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 8C13.7 8 15 9.3 15 11V22H13V16H11V22H9V11C9 9.3 10.3 8 12 8Z"/>
+                                </svg>
                                 About
                             </a>
                         </li>
