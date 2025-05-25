@@ -2,7 +2,7 @@
 const config = {
   plugins: {
     '@tailwindcss/postcss': {},
-    //'@tailwindcss/typography': {}, breaks?
+    // '@tailwindcss/typography': {}, 
   },
 };
 export default config;
