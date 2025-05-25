@@ -25,6 +25,7 @@ export default function Home() {
 
                     <div className="space-y-8">
 
+
                         <About></About>
                         <Experience></Experience>
                         <Projects></Projects>
