@@ -22,7 +22,7 @@ export default function Home() {
             </div>
             
             <main className="flex-1 p-8 bg-base-200 min-h-screen">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-5xl mx-auto">
 
                     <div className="space-y-8">
 
