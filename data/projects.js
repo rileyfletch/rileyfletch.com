@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "r86 Virtual Machine",
     description: "A minimal virtual machine inspired by x86 and LC-3 architectures, with a program loader, assembler, and minor debug tooling",
-    tools: ["React", "Node.js", "PostgreSQL", "AWS", "TailwindCSS", "DaisyUI"],
+    tools: ["C++", "C", "CMake"],
     color: 'badge-secondary',
     url: "https://www.google.com"
   },
@@ -11,7 +11,7 @@ export const projects = [
     id: 2,
     title: "rileyfletch.com",
     description: "My current personal website, blog, and website you're visiting visiting right now",
-    tools: ["React", "Node.js", "PostgreSQL", "AWS"],
+    tools: ["NextJS", "TailwindCSS", "DaisyUI", "MDX"],
     color: 'badge-primary',
     url: "https://www.google.com"
   },
