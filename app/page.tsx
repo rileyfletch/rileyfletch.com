@@ -63,6 +63,14 @@ export default function Home() {
                 <nav className="flex-1 p-8">
                     <ul className="menu menu-lg w-full space-y-2">
                         <li>
+                            <a href="/blog" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
+                                  <path d="M7 14C5.9 14 5 13.1 5 12S5.9 10 7 10 9 10.9 9 12 8.1 14 7 14M12.6 9.4L18.3 3.7C20.1 1.9 22 2.5 22 5V16L20 18H12L7 23V21C7 19.9 6.1 19 5 19S3 19.9 3 21 4.1 23 5 23H7V21L12 16H20V5C20 4.4 19.4 4.2 19 4.6L12.6 9.4Z"/>
+                                </svg>
+                                Blog
+                            </a>
+                        </li>
+                        <li>
                             <a href="#about" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
                                   <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 8C13.7 8 15 9.3 15 11V22H13V16H11V22H9V11C9 9.3 10.3 8 12 8Z"/>
@@ -84,14 +92,6 @@ export default function Home() {
                                   <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2ZM4 14L6 21L10.5 18.5L15 21L17 14H4Z"/>
                                 </svg>
                                 Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M7 14C5.9 14 5 13.1 5 12S5.9 10 7 10 9 10.9 9 12 8.1 14 7 14M12.6 9.4L18.3 3.7C20.1 1.9 22 2.5 22 5V16L20 18H12L7 23V21C7 19.9 6.1 19 5 19S3 19.9 3 21 4.1 23 5 23H7V21L12 16H20V5C20 4.4 19.4 4.2 19 4.6L12.6 9.4Z"/>
-                                </svg>
-                                Blog
                             </a>
                         </li>
                         <li>

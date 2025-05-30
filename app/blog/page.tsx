@@ -88,7 +88,7 @@ const BlogPage: React.FC = () => {
               <div className="mb-8">
                 <h1 className="text-4xl font-bold text-base-content mb-4">Blog Posts</h1>
                 <p className="text-base-content/70 text-lg">
-                  Thoughts, tutorials, and insights on web development
+                  Yapping about whatever technical or lifestyle topic is on my mind
                 </p>
               </div>
 
@@ -169,17 +169,9 @@ const BlogPage: React.FC = () => {
           <label htmlFor="drawer-toggle" className="drawer-overlay"></label>
           <aside className="w-64 min-h-full bg-base-200">
             <div className="p-6">
-              <Link href="/" className="btn btn-ghost btn-block justify-start text-xl font-bold mb-6">
-                ← Back to Site
+              <Link href="/" className="btn btn-ghost btn-block justify-start text-xl font-bold">
+                ← Homepage
               </Link>
-              
-              <div className="menu">
-                <li className="menu-title">Navigation</li>
-                <li><Link href="/" className="hover:bg-base-300">Home</Link></li>
-                <li><Link href="/about" className="hover:bg-base-300">About</Link></li>
-                <li><Link href="/blog" className="hover:bg-base-300 bg-base-300">Blog</Link></li>
-                <li><Link href="/contact" className="hover:bg-base-300">Contact</Link></li>
-              </div>
 
               <div className="divider"></div>
 
