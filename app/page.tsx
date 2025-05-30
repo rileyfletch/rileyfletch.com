@@ -56,7 +56,7 @@ export default function Home() {
                     <h1 className="text-2xl font-bold text-base-content mb-2">Riley Fletcher</h1>
                     <h2 className="text-lg font-medium text-primary mb-3">Software Engineer</h2>
                     <p className="text-base-content/70 leading-relaxed">
-                        Just a chill guy curious about low-level computer stuff
+                        Just a chill guy curious about how computers work
                     </p>
                 </div>
                 

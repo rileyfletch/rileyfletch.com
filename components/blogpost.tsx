@@ -194,16 +194,10 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
       </main>
 
       {/* Footer */}
-      <footer className="footer footer-center p-10 bg-base-200 text-base-content mt-16">
+      <footer className="footer footer-center p-10 bg-base-200 text-base-content mt-6">
         <div>
-          <div className="grid grid-flow-col gap-4">
-            <Link href="/" className="link link-hover">Home</Link>
-            <Link href="/blog" className="link link-hover">Blog</Link>
-            <Link href="/about" className="link link-hover">About</Link>
-            <Link href="/contact" className="link link-hover">Contact</Link>
-          </div>
           <p className="mt-4 text-base-content/70">
-            © 2024 Your Blog Name. All rights reserved.
+            © 2024 Riley Fletcher. All rights reserved.
           </p>
         </div>
       </footer>

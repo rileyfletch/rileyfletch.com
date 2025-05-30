@@ -1,0 +1,32 @@
+import BlogPostTemplate from '@/components/blogpost';
+
+export const meta = {
+  title: 'My Awesome Blog Post',
+  date: '2024-03-15',
+  excerpt: 'This is what my post is about',
+  tags: ['React', 'Next.js']
+};
+
+export const navigation = {
+  previous: { title: 'Previous Post', slug: 'previous-post' },
+  next: { title: 'Next Post', slug: 'next-post' }
+};
+
+export default ({ children }) => (
+  <BlogPostTemplate meta={meta} navigation={navigation}>
+    {children}
+  </BlogPostTemplate>
+);
+
+# My Blog Post Title
+
+This is my actual blog content written in **Markdown**.
+
+## A Subheading
+
+More content here with `code snippets` and other markdown features.
+
+- List item 1
+- List item 2
+
+The end!
