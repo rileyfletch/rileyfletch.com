@@ -1,114 +1,162 @@
-import Image from "next/image";
-import About from "@/components/about";
-import Experience from "@/components/experience";
-import Projects from "@/components/projects";
-import Contact from "@/components/contact";
+import React from 'react';
+import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
-export default function Home() {
-    return (
-        <div className="drawer lg:drawer-open">
-          <input id="drawer-toggle" type="checkbox" className="drawer-toggle" />
-        
-          <div className="drawer-content flex flex-col">
-
-            <div className="navbar bg-base-100 lg:hidden">
-                <div className="flex-none">
-                    <label htmlFor="drawer-toggle" className="btn btn-square btn-ghost">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </label>
-                </div>
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="text-xl font-semibold text-gray-900">Your Name</h1>
+            <div className="flex space-x-8">
+              <a href="/bio" className="text-gray-600 hover:text-gray-900 transition-colors">Bio</a>
+              <a href="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">Experience</a>
+              <a href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
+              <a href="/blog" className="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
             </div>
-            
-            <main className="flex-1 p-8 bg-base-200 min-h-screen">
-                <div className="max-w-5xl mx-auto">
-
-                    <div className="space-y-8">
-
-                        <div className="">
-                          <About></About>
-                        </div>
-                        <Experience></Experience>
-                        <Projects></Projects>
-                       
-                    </div>
-                </div>
-            </main>
           </div>
-        
-          <div className="drawer-side">
-            <label htmlFor="drawer-toggle" className="drawer-overlay"></label>
-            <aside className="w-80 min-h-full bg-base-100 border-r border-base-300 flex flex-col">
-                
-                <div className="p-8 border-b border-base-300">
-                    <div className="avatar mb-6">
-                        <div className="w-24 rounded-full bg-primary/20 flex items-center justify-center">
-                            <Image 
-                            src="shield.svg"
-                            className="max-w-sm rounded-lg shadow-2xl"
-                            alt="blank"
-                            width={25}
-                            height={25}>
-                            </Image>
-                        </div>
-                    </div>
-                    <h1 className="text-2xl font-bold text-base-content mb-2">Riley Fletcher</h1>
-                    <h2 className="text-lg font-medium text-primary mb-3">Software Engineer</h2>
-                    <p className="text-base-content/70 leading-relaxed">
-                        Just a chill guy curious about how computers work
-                    </p>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        {/* Hero Section */}
+        <section className="mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Backend Developer</h2>
+          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
+            Building scalable systems and robust APIs. Passionate about clean code, 
+            performance optimization, and solving complex technical challenges.
+          </p>
+        </section>
+
+        {/* Two Column Layout */}
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Left Column - Main Content */}
+          <div className="md:col-span-2 space-y-12">
+            {/* Recent Projects */}
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Recent Projects</h3>
+              <div className="space-y-6">
+                <div className="border-l-4 border-gray-200 pl-6">
+                  <h4 className="text-lg font-medium text-gray-900 mb-2">Distributed Task Queue System</h4>
+                  <p className="text-gray-600 mb-3">
+                    High-performance task processing system handling 1M+ jobs daily with Redis and Go.
+                  </p>
+                  <a href="/projects/task-queue" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+                    View Project <ExternalLink className="w-4 h-4 ml-1" />
+                  </a>
                 </div>
-                
-                <nav className="flex-1 p-8">
-                    <ul className="menu menu-lg w-full space-y-2">
-                        <li>
-                            <a href="/blog" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M7 14C5.9 14 5 13.1 5 12S5.9 10 7 10 9 10.9 9 12 8.1 14 7 14M12.6 9.4L18.3 3.7C20.1 1.9 22 2.5 22 5V16L20 18H12L7 23V21C7 19.9 6.1 19 5 19S3 19.9 3 21 4.1 23 5 23H7V21L12 16H20V5C20 4.4 19.4 4.2 19 4.6L12.6 9.4Z"/>
-                                </svg>
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 8C13.7 8 15 9.3 15 11V22H13V16H11V22H9V11C9 9.3 10.3 8 12 8Z"/>
-                                </svg>
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#experience" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M10 2H14C15.1 2 16 2.9 16 4V6H20C21.1 6 22 6.9 22 8V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V8C2 6.9 2.9 6 4 6H8V4C8 2.9 8.9 2 10 2ZM10 6H14V4H10V6Z"/>
-                                </svg>
-                                Experience
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2ZM4 14L6 21L10.5 18.5L15 21L17 14H4Z"/>
-                                </svg>
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" className="flex items-center gap-3 hover:bg-primary/10 hover:text-primary transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path d="M14 2H6C4.9 2 4.01 2.9 4.01 4L4 20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM8 15.5V17.5H16V15.5H8ZM8 12.5V14.5H16V12.5H8ZM8 9.5V11.5H13V9.5H8Z"/>
-                                </svg>
-                                Resume
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                
-                <Contact></Contact>
-                
-            </aside>
+                <div className="border-l-4 border-gray-200 pl-6">
+                  <h4 className="text-lg font-medium text-gray-900 mb-2">API Gateway Service</h4>
+                  <p className="text-gray-600 mb-3">
+                    Microservices gateway with rate limiting, authentication, and real-time monitoring.
+                  </p>
+                  <a href="/projects/api-gateway" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+                    View Project <ExternalLink className="w-4 h-4 ml-1" />
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Recent Blog Posts */}
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Recent Posts</h3>
+              <div className="space-y-4">
+                <article>
+                  <h4 className="text-lg font-medium text-gray-900 mb-1">
+                    <a href="/blog/database-indexing" className="hover:text-blue-600">
+                      Optimizing Database Queries with Strategic Indexing
+                    </a>
+                  </h4>
+                  <p className="text-gray-500 text-sm mb-2">March 15, 2024</p>
+                  <p className="text-gray-600">
+                    Deep dive into index strategies that reduced query times by 90% in production.
+                  </p>
+                </article>
+                <article>
+                  <h4 className="text-lg font-medium text-gray-900 mb-1">
+                    <a href="/blog/microservices-patterns" className="hover:text-blue-600">
+                      Essential Microservices Communication Patterns
+                    </a>
+                  </h4>
+                  <p className="text-gray-500 text-sm mb-2">February 28, 2024</p>
+                  <p className="text-gray-600">
+                    Comparing synchronous vs asynchronous patterns in distributed systems.
+                  </p>
+                </article>
+              </div>
+            </section>
           </div>
+
+          {/* Right Column - Sidebar */}
+          <div className="space-y-8">
+            {/* Contact */}
+            <section>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+              <div className="space-y-3">
+                <a 
+                  href="mailto:your.email@example.com" 
+                  className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  <Mail className="w-5 h-5 mr-3" />
+                  Email
+                </a>
+                <a 
+                  href="https://github.com/yourusername" 
+                  className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  <Github className="w-5 h-5 mr-3" />
+                  GitHub
+                </a>
+                <a 
+                  href="https://linkedin.com/in/yourprofile" 
+                  className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  <Linkedin className="w-5 h-5 mr-3" />
+                  LinkedIn
+                </a>
+              </div>
+            </section>
+
+            {/* Quick Links */}
+            <section>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+              <div className="space-y-2">
+                <a href="/resume.pdf" className="block text-gray-600 hover:text-gray-900 transition-colors">
+                  Resume (PDF)
+                </a>
+                <a href="/projects" className="block text-gray-600 hover:text-gray-900 transition-colors">
+                  All Projects
+                </a>
+                <a href="/tech-stack" className="block text-gray-600 hover:text-gray-900 transition-colors">
+                  Tech Stack
+                </a>
+              </div>
+            </section>
+
+            {/* Current Status */}
+            <section>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Status</h3>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  <span className="text-green-800 font-medium">Available for opportunities</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <p className="text-gray-500 text-center">
+            © 2024 Your Name. Built with Next.js and TypeScript.
+          </p>
+        </div>
+      </footer>
     </div>
-    )
+  );
 }
