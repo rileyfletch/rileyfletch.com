@@ -1,59 +1,70 @@
-"use client";
+'use client';
 
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  slug: string;
-  tags?: string[];
-}
-
-// Sample blog posts - replace with your actual data
-const samplePosts: BlogPost[] = [
+// Mock data structure - replace with your actual data source
+const mockBlogPosts = [
   {
-    id: '1',
-    title: 'Getting Started with Next.js and TypeScript',
-    excerpt: 'Learn how to set up a modern web application with Next.js and TypeScript for better development experience.',
-    date: '2024-03-15',
-    slug: 'getting-started-nextjs-typescript',
-    tags: ['Next.js', 'TypeScript', 'React']
+    slug: "optimizing-database-queries",
+    title: "Optimizing Database Queries with Strategic Indexing",
+    description: "Deep dive into index strategies that reduced query times by 90% in production. Learn about composite indexes, query planning, and performance monitoring techniques.",
+    date: "2024-03-15"
   },
   {
-    id: '2',
-    title: 'Building Responsive UIs with Tailwind CSS',
-    excerpt: 'Explore the power of utility-first CSS framework and how to create beautiful, responsive designs.',
-    date: '2024-03-10',
-    slug: 'responsive-ui-tailwind-css',
-    tags: ['CSS', 'Tailwind', 'Design']
+    slug: "microservices-communication-patterns",
+    title: "Essential Microservices Communication Patterns",
+    description: "Comparing synchronous vs asynchronous patterns in distributed systems. Explore event-driven architectures, message queues, and service mesh implementations.",
+    date: "2024-02-28"
   },
   {
-    id: '3',
-    title: 'State Management in React Applications',
-    excerpt: 'Compare different state management solutions and when to use each approach in your React apps.',
-    date: '2024-03-05',
-    slug: 'state-management-react',
-    tags: ['React', 'State Management', 'JavaScript']
+    slug: "linux-kernel-debugging",
+    title: "Debugging Linux Kernel Modules in Production",
+    description: "Practical techniques for troubleshooting kernel issues without bringing down production systems. Tools, techniques, and real-world examples.",
+    date: "2024-02-10"
+  },
+  {
+    slug: "container-security-best-practices",
+    title: "Container Security: Beyond the Basics",
+    description: "Advanced security practices for containerized applications. Runtime protection, image scanning, and network policies that actually work in production.",
+    date: "2024-01-22"
+  },
+  {
+    slug: "go-performance-optimization",
+    title: "Go Performance Optimization Techniques",
+    description: "Profiling, memory management, and concurrency patterns that improved our API response times by 300%. Practical examples with benchmarks.",
+    date: "2024-01-08"
+  },
+  {
+    slug: "infrastructure-as-code-lessons",
+    title: "Infrastructure as Code: Lessons from the Trenches",
+    description: "Hard-learned lessons from managing infrastructure across multiple environments. State management, drift detection, and team collaboration strategies.",
+    date: "2023-12-18"
   }
 ];
 
-const BlogPage: React.FC = () => {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+export default function Blog() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Simulate loading posts - replace with actual data fetching
+    const loadPosts = async () => {
+      setLoading(true);
+      // In a real implementation, you'd fetch from your MDX files or API here
+      // const posts = await fetchBlogPosts();
+      
+      // Sort by date (newest first)
+      const sortedPosts = mockBlogPosts.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+      setPosts(sortedPosts);
+      setLoading(false);
+    };
+    
+    loadPosts();
+  }, []);
 
-  // Get unique tags from all posts
-  const allTags = Array.from(
-    new Set(samplePosts.flatMap(post => post.tags || []))
-  );
-
-  // Filter posts by selected tag
-  const filteredPosts = selectedTag
-    ? samplePosts.filter(post => post.tags?.includes(selectedTag))
-    : samplePosts;
-
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -61,152 +72,72 @@ const BlogPage: React.FC = () => {
     });
   };
 
-  return (
-    <div className="min-h-screen bg-base-100">
-      <div className="drawer lg:drawer-open">
-        <input id="drawer-toggle" type="checkbox" className="drawer-toggle" />
-        
-        {/* Main content */}
-        <div className="drawer-content flex flex-col">
-          {/* Navbar for mobile */}
-          <div className="navbar bg-base-300 lg:hidden">
-            <div className="flex-none">
-              <label htmlFor="drawer-toggle" className="btn btn-square btn-ghost">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </label>
-            </div>
-            <div className="flex-1">
-              <h1 className="text-xl font-bold">My Blog</h1>
-            </div>
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <main className="max-w-4xl mx-auto px-6 py-16">
+          <div className="flex justify-center items-center h-64">
+            <div className="text-gray-500">Loading posts...</div>
           </div>
-
-          {/* Blog content */}
-          <main className="flex-1 p-6 lg:p-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-8">
-                <h1 className="text-4xl font-bold text-base-content mb-4">Blog Posts</h1>
-                <p className="text-base-content/70 text-lg">
-                  Yapping about whatever technical or lifestyle topic is on my mind
-                </p>
-              </div>
-
-              {/* Tag filter */}
-              <div className="mb-8">
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedTag(null)}
-                    className={`btn btn-sm ${!selectedTag ? 'btn-primary' : 'btn-outline'}`}
-                  >
-                    All Posts
-                  </button>
-                  {allTags.map(tag => (
-                    <button
-                      key={tag}
-                      onClick={() => setSelectedTag(tag)}
-                      className={`btn btn-sm ${selectedTag === tag ? 'btn-primary' : 'btn-outline'}`}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Blog posts list */}
-              <div className="space-y-6">
-                {filteredPosts.map(post => (
-                  <article key={post.id} className="card bg-base-200 shadow-md hover:shadow-lg transition-shadow">
-                    <div className="card-body">
-                      <div className="flex justify-between items-start mb-2">
-                        <time className="text-sm text-base-content/60">
-                          {formatDate(post.date)}
-                        </time>
-                        {post.tags && (
-                          <div className="flex flex-wrap gap-1">
-                            {post.tags.map(tag => (
-                              <span key={tag} className="badge badge-outline badge-sm">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      
-                      <h2 className="card-title text-2xl mb-3">
-                        <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
-                          {post.title}
-                        </Link>
-                      </h2>
-                      
-                      <p className="text-base-content/80 mb-4">
-                        {post.excerpt}
-                      </p>
-                      
-                      <div className="card-actions">
-                        <Link href={`/blog/${post.slug}`} className="btn btn-primary btn-sm">
-                          Read More
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              {filteredPosts.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-base-content/60 text-lg">
-                    No posts found for the selected tag.
-                  </p>
-                </div>
-              )}
-            </div>
-          </main>
-        </div>
-
-        {/* Sidebar */}
-        <div className="drawer-side">
-          <label htmlFor="drawer-toggle" className="drawer-overlay"></label>
-          <aside className="w-64 min-h-full bg-base-200">
-            <div className="p-6">
-              <Link href="/" className="btn btn-ghost btn-block justify-start text-xl font-bold">
-                ← Homepage
-              </Link>
-
-              <div className="divider"></div>
-
-              <div className="menu">
-                <li className="menu-title">Recent Posts</li>
-                {samplePosts.slice(0, 3).map(post => (
-                  <li key={post.id}>
-                    <Link href={`/blog/${post.slug}`} className="text-sm hover:bg-base-300">
-                      {post.title}
-                    </Link>
-                  </li>
-                ))}
-              </div>
-
-              <div className="divider"></div>
-
-              <div className="menu">
-                <li className="menu-title">Tags</li>
-                {allTags.slice(0, 5).map(tag => (
-                  <li key={tag}>
-                    <button 
-                      onClick={() => setSelectedTag(tag)}
-                      className="text-sm hover:bg-base-300 justify-start"
-                    >
-                      {tag}
-                    </button>
-                  </li>
-                ))}
-              </div>
-            </div>
-          </aside>
-        </div>
+        </main>
       </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        {/* Back Button */}
+        <div className="mb-12">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+        </div>
+
+        {/* Header */}
+        <section className="mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Posts</h1>
+          <div className="w-24 h-1 bg-gray-200 mb-4"></div>
+        </section>
+
+        {/* Blog Posts */}
+        <div className="space-y-8">
+          {posts.map((post) => (
+            <article 
+              key={post.slug} 
+              className="border-l-4 border-gray-200 pl-8 hover:border-blue-300 transition-colors group"
+            >
+              <div className="flex items-center text-sm text-gray-500 mb-3">
+                <Calendar className="w-4 h-4 mr-1" />
+                {formatDate(post.date)}
+              </div>
+              
+              <h2 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <a href={`/blog/${post.slug}`}>
+                  {post.title}
+                </a>
+              </h2>
+              
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {post.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <p className="text-gray-500 text-center">
+            © 2025 Riley Fletcher // Austin, Texas
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default BlogPage;
+}
