@@ -4,37 +4,18 @@ import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-xl font-semibold text-gray-900">Your Name</h1>
-            <div className="flex space-x-8">
-              <a href="/bio" className="text-gray-600 hover:text-gray-900 transition-colors">Bio</a>
-              <a href="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">Experience</a>
-              <a href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
-              <a href="/blog" className="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
-            </div>
-          </div>
-        </div>
-      </nav>
 
-      {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16">
-        {/* Hero Section */}
+        
         <section className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Backend Developer</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">riley fletcher</h2>
           <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-            Building scalable systems and robust APIs. Passionate about clean code, 
-            performance optimization, and solving complex technical challenges.
+            infrastructure, linux, security, open source
           </p>
         </section>
 
-        {/* Two Column Layout */}
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Left Column - Main Content */}
           <div className="md:col-span-2 space-y-12">
-            {/* Recent Projects */}
             <section>
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Recent Projects</h3>
               <div className="space-y-6">
@@ -59,7 +40,6 @@ export default function Portfolio() {
               </div>
             </section>
 
-            {/* Recent Blog Posts */}
             <section>
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Recent Posts</h3>
               <div className="space-y-4">
@@ -89,9 +69,7 @@ export default function Portfolio() {
             </section>
           </div>
 
-          {/* Right Column - Sidebar */}
           <div className="space-y-8">
-            {/* Contact */}
             <section>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
               <div className="space-y-3">
@@ -119,7 +97,6 @@ export default function Portfolio() {
               </div>
             </section>
 
-            {/* Quick Links */}
             <section>
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
               <div className="space-y-2">
@@ -135,25 +112,15 @@ export default function Portfolio() {
               </div>
             </section>
 
-            {/* Current Status */}
-            <section>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Status</h3>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  <span className="text-green-800 font-medium">Available for opportunities</span>
-                </div>
-              </div>
-            </section>
+            
           </div>
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-gray-200 mt-20">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <p className="text-gray-500 text-center">
-            © 2024 Your Name. Built with Next.js and TypeScript.
+            © 2025 Riley Fletcher - Austin, Texas
           </p>
         </div>
       </footer>
