@@ -22,7 +22,7 @@ export default function Portfolio() {
             <section>
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Recent Projects</h3>
               <div className="space-y-6">
-                <div className="border-l-4 border-gray-200 pl-6">
+                <div className="border-l-4 border-gray-200 pl-6 hover:border-blue-300 transition-colors group">
                   <h4 className="text-lg font-medium text-gray-900 mb-2">Distributed Task Queue System</h4>
                   <p className="text-gray-600 mb-3">
                     High-performance task processing system handling 1M+ jobs daily with Redis and Go.
@@ -31,7 +31,7 @@ export default function Portfolio() {
                     GitHub <ExternalLink className="w-4 h-4 ml-1" />
                   </a>
                 </div>
-                <div className="border-l-4 border-gray-200 pl-6">
+                <div className="border-l-4 border-gray-200 pl-6 hover:border-blue-300 transition-colors group">
                   <h4 className="text-lg font-medium text-gray-900 mb-2">API Gateway Service</h4>
                   <p className="text-gray-600 mb-3">
                     Microservices gateway with rate limiting, authentication, and real-time monitoring.
@@ -77,21 +77,21 @@ export default function Portfolio() {
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
               <div className="space-y-3">
                 <a 
-                  href="mailto:your.email@example.com" 
+                  href="mailto:nrileyfletcher@gmail.com" 
                   className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   <Mail className="w-5 h-5 mr-3" />
                   Email
                 </a>
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/rileyfletch" 
                   className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   <Github className="w-5 h-5 mr-3" />
                   GitHub
                 </a>
                 <a 
-                  href="https://linkedin.com/in/yourprofile" 
+                  href="https://linkedin.com/in/rileyfletcher" 
                   className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   <Linkedin className="w-5 h-5 mr-3" />

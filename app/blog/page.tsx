@@ -87,7 +87,6 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white">
       <main className="max-w-4xl mx-auto px-6 py-16">
-        {/* Back Button */}
         <div className="mb-12">
           <Link 
             href="/" 
@@ -98,13 +97,10 @@ export default function Blog() {
           </Link>
         </div>
 
-        {/* Header */}
         <section className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Posts</h1>
-          <div className="w-24 h-1 bg-gray-200 mb-4"></div>
         </section>
 
-        {/* Blog Posts */}
         <div className="space-y-8">
           {posts.map((post) => (
             <article 
@@ -130,7 +126,6 @@ export default function Blog() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-gray-200 mt-20">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <p className="text-gray-500 text-center">

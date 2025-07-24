@@ -20,7 +20,6 @@ export default function Projects() {
         {/* Header */}
         <section className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Projects</h1>
-          <div className="w-36 h-1 bg-gray-200"></div>
         </section>
 
         {/* Projects */}

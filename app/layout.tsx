@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Montserrat } from 'next/font/google'
+import { Lato } from 'next/font/google'
  
-const roboto = Montserrat({
+const roboto = Lato({
   weight: '400',
   subsets: ['latin'],
 })

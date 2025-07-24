@@ -16,9 +16,9 @@ export default function About() {
           </Link>
         </div>
 
-        <section className="mb-12">
+        <section className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About</h1>
-          <div className="w-28 h-1 bg-gray-200"></div>
+          <div className="w-26 h-1 bg-gray-200"></div>
         </section>
 
         <div className="max-w-3xl space-y-8">
